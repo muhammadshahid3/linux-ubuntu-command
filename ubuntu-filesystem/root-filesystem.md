@@ -1,9 +1,10 @@
-Ubuntu Root Filesystem
+# Ubuntu Root Filesystem
 
-This document shows the main directories and filesystem structure under the Linux root directory "/".
+A quick reference guide to the main directories and structure under the Linux root directory (`/`) on Ubuntu.
 
-Root Filesystem
+## Root Filesystem Tree
 
+```
 /
 ├── bin
 ├── boot
@@ -24,57 +25,75 @@ Root Filesystem
 ├── tmp
 ├── usr
 └── var
+```
 
-Main Root Directories
+## Main Root Directories
 
-Directory| Category
-"/"| Root filesystem
-"/bin"| Essential user commands
-"/boot"| Bootloader and kernel files
-"/dev"| Device files
-"/etc"| System configuration
-"/home"| Normal users' home directories
-"/lib"| Essential shared libraries
-"/lib64"| 64-bit libraries/linking support where applicable
-"/media"| Removable media mount points
-"/mnt"| Temporary mount point
-"/opt"| Optional/third-party software
-"/proc"| Virtual process/kernel filesystem
-"/root"| Root user's home directory
-"/run"| Runtime system data
-"/sbin"| System administration commands
-"/srv"| Data served by system services
-"/sys"| Virtual kernel/device filesystem
-"/tmp"| Temporary files
-"/usr"| User-space programs, libraries and data
-"/var"| Variable data such as logs and caches
+| Directory | Category                                              |
+|-----------|--------------------------------------------------------|
+| `/`       | Root filesystem                                        |
+| `/bin`    | Essential user commands                                |
+| `/boot`   | Bootloader and kernel files                             |
+| `/dev`    | Device files                                            |
+| `/etc`    | System configuration                                    |
+| `/home`   | Normal users' home directories                          |
+| `/lib`    | Essential shared libraries                               |
+| `/lib64`  | 64-bit libraries/linking support where applicable         |
+| `/media`  | Removable media mount points                              |
+| `/mnt`    | Temporary mount point                                    |
+| `/opt`    | Optional/third-party software                            |
+| `/proc`   | Virtual process/kernel filesystem                         |
+| `/root`   | Root user's home directory                                |
+| `/run`    | Runtime system data                                       |
+| `/sbin`   | System administration commands                            |
+| `/srv`    | Data served by system services                            |
+| `/sys`    | Virtual kernel/device filesystem                           |
+| `/tmp`    | Temporary files                                           |
+| `/usr`    | User-space programs, libraries and data                    |
+| `/var`    | Variable data such as logs and caches                       |
 
-Important Note
+## Important Note
 
-Modern Ubuntu uses usr-merge, so "/bin", "/sbin", and "/lib" may be symbolic links or otherwise integrated with "/usr" locations.
+Modern Ubuntu uses **usr-merge**, so `/bin`, `/sbin`, and `/lib` may be symbolic links or otherwise integrated with `/usr` locations.
 
 For example:
 
+```bash
 ls -ld /bin /sbin /lib
+```
 
-Explore the Root Filesystem
+## Exploring the Root Filesystem
 
-List directories:
+**List directories:**
 
+```bash
 ls /
+```
 
-Detailed listing:
+**Detailed listing:**
 
+```bash
 ls -lah /
+```
 
-Show directory tree if "tree" is installed:
+**Show directory tree (if `tree` is installed):**
 
+```bash
 tree -L 1 /
+```
 
-Check filesystem mounts:
+**Check filesystem mounts:**
 
+```bash
 findmnt
+```
 
-Check disk usage:
+**Check disk usage:**
 
+```bash
 df -h
+```
+
+---
+
+*Reference document for the standard Ubuntu/Linux root filesystem hierarchy (FHS).*
